@@ -1,14 +1,16 @@
-import "./globals.css"
-import { Poppins } from "next/font/google"
+import { Poppins } from 'next/font/google'
+
+import './globals.css'
+import { NextAuthProvider } from './providers'
 
 const inter = Poppins({
-  weight: ["400", "500", "600", "700"],
-  subsets: ["latin-ext"],
+  weight: ['400', '500', '600', '700'],
+  subsets: ['latin-ext'],
 })
 
 export const metadata = {
-  title: "Shop Genius",
-  description: "Ultimate Shopping Destination",
+  title: 'Shop Genius',
+  description: 'Ultimate Shopping Destination',
 }
 
 export default function RootLayout({
@@ -18,7 +20,11 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className={inter.className}>{children}</body>
+      <body className={inter.className}>
+        <main className="h-screen bg-stone-100">
+          <NextAuthProvider>{children}</NextAuthProvider>
+        </main>
+      </body>
     </html>
   )
 }
