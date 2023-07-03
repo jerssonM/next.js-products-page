@@ -1,5 +1,5 @@
 export const CATEGORIES = [
-  'select an option',
+  'all',
   'electronics',
   'jewelery',
   "men's clothing",

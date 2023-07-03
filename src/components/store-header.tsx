@@ -2,30 +2,30 @@
 
 import Link from 'next/link'
 import { signOut } from 'next-auth/react'
-import { useRouter } from 'next/navigation'
-import { Logout, Send } from 'iconsax-react'
 import { ChangeEvent, useState } from 'react'
+import { Logout, SearchNormal } from 'iconsax-react'
 
 import { CONSTANTS } from '@/constants'
+import { useQueryParams } from '@/hooks/useQueryParams'
 
 import { ShoppingCart } from './shopping-cart'
 import { CategoriesSelect } from './categories-select'
-import { Logo, Input, Button, Separator } from './ui'
+import { Logo, Input, Button, Separator, Tooltip } from './ui'
 
 export const StoreHeader = () => {
-  const router = useRouter()
   const [searchText, setSearchText] = useState('')
+  const { updateQueryParams } = useQueryParams()
 
   const handleSearchInput = ({ target }: ChangeEvent<HTMLInputElement>) => {
     setSearchText(target.value)
   }
 
   const handleClickSearch = () => {
-    router.push(`${CONSTANTS.ROUTES.STORE}?search=${searchText}`)
+    updateQueryParams(CONSTANTS.ROUTES.STORE, { search: searchText })
   }
 
   const handleChangeCategory = (category: string) => {
-    router.push(`${CONSTANTS.ROUTES.STORE}?category=${category}`)
+    updateQueryParams(CONSTANTS.ROUTES.STORE, { category })
   }
 
   const handleLogout = () => {
@@ -43,9 +43,11 @@ export const StoreHeader = () => {
           placeholder="Search something..."
           onChange={handleSearchInput}
         />
-        <Button onClick={handleClickSearch}>
-          <Send />
-        </Button>
+        <Tooltip content={<p>Search</p>}>
+          <Button onClick={handleClickSearch}>
+            <SearchNormal />
+          </Button>
+        </Tooltip>
       </nav>
       <div className="flex mb-4 px-4 justify-between">
         <div className="w-full md:w-1/3 mr-4">
@@ -53,9 +55,11 @@ export const StoreHeader = () => {
         </div>
         <div className="flex">
           <ShoppingCart className="mr-4" />
-          <Button onClick={handleLogout} variant="destructive">
-            <Logout />
-          </Button>
+          <Tooltip content={<p>Logout</p>}>
+            <Button onClick={handleLogout} variant="destructive">
+              <Logout />
+            </Button>
+          </Tooltip>
         </div>
       </div>
       <Separator />

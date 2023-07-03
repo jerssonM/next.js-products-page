@@ -1,6 +1,6 @@
+import Link from 'next/link'
 import Image from 'next/image'
 
-import Link from 'next/link'
 import { CONSTANTS } from '@/constants'
 import { Product } from '@/services/fake-store/types'
 
@@ -29,7 +29,7 @@ export const RecommendedProductsList = ({
             </CardTitle>
             <CardContent className="mb-4 p-4">
               <div
-                style={{ width: 200, height: 200 }}
+                style={{ width: 150, height: 150 }}
                 className="relative mx-auto"
               >
                 <Image

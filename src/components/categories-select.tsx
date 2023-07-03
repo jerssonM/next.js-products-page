@@ -1,6 +1,7 @@
 import { useMemo } from 'react'
 
 import { CONSTANTS } from '@/constants'
+import { useQueryParams } from '@/hooks/useQueryParams'
 
 import {
   Select,
@@ -17,6 +18,8 @@ type CategoriesSelectProps = {
 }
 
 export const CategoriesSelect = ({ onChange }: CategoriesSelectProps) => {
+  const { getQueryParam } = useQueryParams()
+
   const renderItems = useMemo(
     () =>
       CONSTANTS.CATEGORIES.map((category) => (
@@ -35,7 +38,7 @@ export const CategoriesSelect = ({ onChange }: CategoriesSelectProps) => {
   return (
     <>
       <Select
-        defaultValue={CONSTANTS.CATEGORIES[0]}
+        defaultValue={getQueryParam('category') || CONSTANTS.CATEGORIES[0]}
         onValueChange={handleChangeOption}
       >
         <SelectTrigger>

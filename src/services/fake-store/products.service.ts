@@ -15,7 +15,7 @@ export const fetchProducts = async ({
         .toLowerCase()
         .includes(search.toLowerCase())
     }
-    if (category) {
+    if (category && includeProduct) {
       includeProduct = product.category === category
     }
     return includeProduct

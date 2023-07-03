@@ -3,3 +3,5 @@ export const ROUTES = {
   STORE: '/store',
   LOGIN: '/login',
 }
+
+export type Route = (typeof ROUTES)[keyof typeof ROUTES]
