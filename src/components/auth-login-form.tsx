@@ -1,4 +1,5 @@
 'use client'
+
 import { z } from 'zod'
 import Image from 'next/image'
 import { useState } from 'react'
@@ -7,13 +8,11 @@ import { useForm } from 'react-hook-form'
 import { useRouter } from 'next/navigation'
 import { zodResolver } from '@hookform/resolvers/zod'
 
-import { cn } from '@/lib/utils'
 import { CONSTANTS } from '@/constants'
 import { useFetch } from '@/hooks/useFetch'
 import { Credentials } from '@/services/fake-store/types'
 
-import styles from './auth-login-form.module.css'
-import { Input, Button, Label, Checkbox, Loader } from '../ui'
+import { Input, Button, Label, Checkbox, Loader, Logo } from './ui'
 
 const formSchema = z.object({
   username: z.string().nonempty('Username is required'),
@@ -62,19 +61,15 @@ export const AuthLoginForm = () => {
     <div className="h-full flex flex-col justify-center items-center px-8 w-full  md:w-6/12 ">
       <div className="w-full relative">
         <Image
-          className={cn(
-            'absolute left-1/2 transform -translate-x-1/2',
-            styles['shopping-cart-image']
-          )}
           width={250}
           height={250}
           priority
           src="/img/shopping-cart.svg"
           alt="shopping cart"
+          style={{ top: '-180px' }}
+          className="absolute left-1/2 transform -translate-x-1/2"
         />
-        <h1 className="font-semibold text-3xl mb-14 drop-shadow-md animate-bounce text-center">
-          Shop <span className="text-orange-500">Genius</span>
-        </h1>
+        <Logo className="animate-bounce mb-10 text-center" />
         <form className="w-full" onSubmit={handleSubmit(onSubmit)}>
           <fieldset className="mb-4">
             <Label htmlFor="username">Username</Label>

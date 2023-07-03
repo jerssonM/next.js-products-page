@@ -16,3 +16,17 @@ export interface User {
   phone: string
   address: Record<string, string>
 }
+
+export interface Product {
+  id: number
+  title: string
+  price: number
+  image: string
+  category: string
+  description: string
+}
+
+export interface ProductFetchParams {
+  search?: string
+  category?: string
+}

@@ -1,19 +1,17 @@
-'use client'
-import { useSession, signOut } from 'next-auth/react'
+import { PageProps, PageStoreSearchParams } from '@/types'
+import { StoreProductGrid } from '@/components/store-product-grid'
+import { fetchProducts } from '@/services/fake-store/products.service'
 
-const StorePage = () => {
-  const { data: session } = useSession()
-  console.log(session)
-
-  const handleLogout = async () => {
-    const response = await signOut()
-    console.log(response)
-  }
+const StorePage = async ({
+  searchParams,
+}: PageProps<object, PageStoreSearchParams>) => {
+  const { search, category } = searchParams
+  const products = await fetchProducts({ search, category })
 
   return (
-    <div>
-      StorePage<button onClick={handleLogout}>logout</button>
-    </div>
+    <section>
+      <StoreProductGrid products={products} />
+    </section>
   )
 }
 

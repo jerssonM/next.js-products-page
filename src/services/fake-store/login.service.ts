@@ -1,5 +1,5 @@
-import { Credentials, LoginResponse, User } from './types'
 import { axiosFakeStoreInstance } from '../axios'
+import { Credentials, LoginResponse, User } from './types'
 
 export const login = async (credentials: Credentials) => {
   try {
