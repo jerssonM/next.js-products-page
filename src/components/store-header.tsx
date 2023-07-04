@@ -42,9 +42,13 @@ export const StoreHeader = () => {
           className="flex-1 mr-4"
           placeholder="Search something..."
           onChange={handleSearchInput}
+          data-testid="store-header__input-search"
         />
         <Tooltip content={<p>Search</p>}>
-          <Button onClick={handleClickSearch}>
+          <Button
+            onClick={handleClickSearch}
+            data-testid="store-header__button-search"
+          >
             <SearchNormal />
           </Button>
         </Tooltip>
@@ -56,7 +60,11 @@ export const StoreHeader = () => {
         <div className="flex">
           <ShoppingCart className="mr-4" />
           <Tooltip content={<p>Logout</p>}>
-            <Button onClick={handleLogout} variant="destructive">
+            <Button
+              onClick={handleLogout}
+              variant="destructive"
+              data-testid="store-header__button-logout"
+            >
               <Logout />
             </Button>
           </Tooltip>

@@ -58,7 +58,7 @@ export const AuthLoginForm = () => {
   }
 
   return (
-    <div className="h-full flex justify-center items-center px-8 w-full md:w-6/12 z-10">
+    <div className="h-full flex justify-center items-center px-8 w-full md:w-8/12 z-10">
       <div className="w-full relative">
         <Image
           width={250}
@@ -100,7 +100,6 @@ export const AuthLoginForm = () => {
           <fieldset className="mb-6">
             <div className="flex items-center space-x-2">
               <Checkbox
-                id="terms"
                 disabled={isLoading}
                 {...checkboxRegister}
                 onCheckedChange={(value) =>

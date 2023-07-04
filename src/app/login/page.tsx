@@ -1,16 +1,22 @@
-import { cn } from '@/lib/utils'
+import Image from 'next/image'
+
+import WomenShoppingImg from '@/assets/women-shopping.jpg'
 import { AuthLoginForm } from '@/components/auth-login-form'
 
-import styles from './page.module.css'
-
 const LoginPage = () => (
-  <div
-    className={cn(
-      'h-full flex justify-center md:justify-end',
-      styles['login__image-background']
-    )}
-  >
-    <AuthLoginForm />
+  <div className="h-full flex  items-center justify-center md:justify-end">
+    <picture className="relative w-6/12 h-full hidden md:block">
+      <Image
+        fill
+        priority
+        alt="Women shopping"
+        className="object-contain"
+        src={WomenShoppingImg}
+      />
+    </picture>
+    <div className="flex justify-center w-full md:w-6/12">
+      <AuthLoginForm />
+    </div>
   </div>
 )
 
