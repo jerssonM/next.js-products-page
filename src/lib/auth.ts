@@ -1,8 +1,8 @@
 import type { NextAuthOptions } from 'next-auth'
 import CredentialsProvider from 'next-auth/providers/credentials'
 
-import { login } from '@/services/fake-store/login.service'
 import { CONSTANTS } from '@/constants'
+import { login } from '@/services/fake-store/login.service'
 
 export const authOptions: NextAuthOptions = {
   pages: {

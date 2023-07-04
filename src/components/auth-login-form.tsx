@@ -22,8 +22,8 @@ const formSchema = z.object({
   }),
 })
 const formDefaultValues = {
-  username: 'mor_2314',
-  password: '83r5^_',
+  username: '',
+  password: '',
   terms: false,
 }
 
@@ -58,7 +58,7 @@ export const AuthLoginForm = () => {
   }
 
   return (
-    <div className="h-full flex flex-col justify-center items-center px-8 w-full  md:w-6/12 ">
+    <div className="h-full flex flex-col justify-center items-center px-8 w-full md:w-6/12 ">
       <div className="w-full relative">
         <Image
           width={250}
@@ -66,8 +66,7 @@ export const AuthLoginForm = () => {
           priority
           src="/img/shopping-cart.svg"
           alt="shopping cart"
-          style={{ top: '-180px' }}
-          className="absolute left-1/2 transform -translate-x-1/2"
+          className="mx-auto"
         />
         <Logo className="animate-bounce mb-10 text-center" />
         <form className="w-full" onSubmit={handleSubmit(onSubmit)}>
@@ -124,7 +123,7 @@ export const AuthLoginForm = () => {
             disabled={isLoading}
             LeftIcon={isLoading && <Loader />}
           >
-            Login
+            Sign in
           </Button>
           {showLoginError && (
             <span className="text-xs text-red-500 mt-2">
