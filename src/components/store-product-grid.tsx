@@ -1,10 +1,10 @@
 'use client'
 
+import { useStore } from '@/hooks/useStore'
 import { useCartStore } from '@/stores/cart.store'
 import { Product } from '@/services/fake-store/types'
 
 import { ProductCard } from './product-card'
-import { useStore } from '@/hooks/useStore'
 
 type StoreProductGridProps = {
   products: Product[]

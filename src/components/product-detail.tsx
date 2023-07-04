@@ -1,6 +1,7 @@
 'use client'
 
 import Image from 'next/image'
+import { Rating, Star } from '@smastrom/react-rating'
 import { AddSquare, TickSquare } from 'iconsax-react'
 
 import { cn, currencyFormatter } from '@/lib/utils'
@@ -11,6 +12,12 @@ import { Button } from './ui'
 
 type ProductDetailProps = {
   product: Product
+}
+
+const RATING_STYLE = {
+  itemShapes: Star,
+  activeFillColor: '#f97316',
+  inactiveFillColor: '#fdba74',
 }
 
 export const ProductDetail = ({ product }: ProductDetailProps) => {
@@ -28,15 +35,15 @@ export const ProductDetail = ({ product }: ProductDetailProps) => {
   return (
     <div className="p-4">
       <h2 className="font-bold text-2xl mb-4">{product.title}</h2>
-      <picture className="flex relative flex-col items-center md:flex-row">
+      <picture className="flex relative flex-col md:flex-row">
         <Image
           width={200}
           height={200}
           src={product.image}
           alt={product.title}
-          className="mb-4 md:mb-0 md:mr-8"
+          className="mb-4 md:mb-0 md:mr-8 self-center"
         />
-        <div className="md:p-4 md:w-1/3">
+        <div className="mr-4 mb-4 md:mb-0 md:p-4 md:w-1/3">
           <p className="mb-4">{product.description}</p>
           <p className="font-bold text-lg">
             {currencyFormatter(product.price)}
@@ -54,6 +61,19 @@ export const ProductDetail = ({ product }: ProductDetailProps) => {
               <AddSquare variant="Bold" />
             )}
           </Button>
+        </div>
+        <div>
+          <Rating
+            style={{ maxWidth: 250 }}
+            value={product.rating.rate}
+            readOnly
+            halfFillMode="svg"
+            itemStyles={RATING_STYLE}
+            className="mb-4"
+          />
+          <p>
+            <span className="font-semibold">Votes:</span> {product.rating.count}
+          </p>
         </div>
       </picture>
     </div>

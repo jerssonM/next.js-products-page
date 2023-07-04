@@ -15,7 +15,7 @@ const HomePage = () => (
     )}
   >
     <div className="z-10">
-      <Logo className="mb-8" />
+      <Logo className="mb-8 animate-bounce" />
       <Link href={CONSTANTS.ROUTES.LOGIN}>
         <Button className="w-40">
           <span className="mr-2">Login</span>

@@ -24,6 +24,10 @@ export interface Product {
   image: string
   category: string
   description: string
+  rating: {
+    rate: number
+    count: number
+  }
 }
 
 export interface ProductFetchParams {

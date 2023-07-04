@@ -76,6 +76,7 @@ export const AuthLoginForm = () => {
               {...register('username')}
               autoComplete="username"
               disabled={isLoading}
+              data-testid="auth-login-form__input-username"
             />
             {errors.username && (
               <span className="block text-xs text-red-500 mt-1">
@@ -90,6 +91,7 @@ export const AuthLoginForm = () => {
               autoComplete="current-password"
               type="password"
               disabled={isLoading}
+              data-testid="auth-login-form__input-password"
             />
             {errors.password && (
               <span className="text-xs text-red-500 mt-1">
@@ -107,6 +109,7 @@ export const AuthLoginForm = () => {
                     target: { value, name: 'terms' },
                   })
                 }
+                data-testid="auth-login-form__checkbox-terms"
               />
               <label htmlFor="terms">Accept terms and conditions</label>
             </div>
@@ -121,6 +124,7 @@ export const AuthLoginForm = () => {
             type="submit"
             disabled={isLoading}
             LeftIcon={isLoading && <Loader />}
+            data-testid="auth-login-form__button-sign-in"
           >
             Sign in
           </Button>

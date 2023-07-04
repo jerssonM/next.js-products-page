@@ -1,3 +1,5 @@
+import '@smastrom/react-rating/style.css'
+
 import { StoreHeader } from '@/components/store-header'
 
 type StoreLayoutProps = {

@@ -33,7 +33,7 @@ export const ProductCard = ({
     className="flex flex-col h-full justify-between"
   >
     <CardHeader>
-      <CardTitle className="mb-4 truncate ..." title={product.title}>
+      <CardTitle className="mb-4 line-clamp-1" title={product.title}>
         {product.title}
       </CardTitle>
       <CardDescription
@@ -62,6 +62,7 @@ export const ProductCard = ({
           variant="ghost"
           className={cn('p-1', isAdded && 'text-green-500')}
           onClick={() => onAddProduct(product)}
+          data-testid={`product-card__button-add-${product.id}`}
         >
           <span className="mr-2">{isAdded ? 'Added' : 'Add to cart'}</span>{' '}
           {isAdded ? (
