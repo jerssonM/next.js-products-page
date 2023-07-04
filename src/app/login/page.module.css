@@ -1,0 +1,14 @@
+@media screen and (min-width: 1024px) {
+  .login__image-background::after {
+    z-index: 1;
+    width: 100%;
+    height: 100vh;
+    content: '';
+    opacity: 0.9;
+    position: absolute;
+    background-size: 50%;
+    background-repeat: no-repeat;
+    background-position: 0 center;
+    background-image: url('/img/women-shopping.png');
+  }
+}

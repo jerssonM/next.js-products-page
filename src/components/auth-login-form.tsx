@@ -58,7 +58,7 @@ export const AuthLoginForm = () => {
   }
 
   return (
-    <div className="h-full flex flex-col justify-center items-center px-8 w-full md:w-6/12 ">
+    <div className="h-full flex justify-center items-center px-8 w-full md:w-6/12 z-10">
       <div className="w-full relative">
         <Image
           width={250}
