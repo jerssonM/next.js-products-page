@@ -3,12 +3,12 @@
   width: 100%;
   height: 100vh;
   content: '';
-  opacity: 0.6;
+  opacity: 0.8;
   position: absolute;
-  background-size: 60%;
+  background-size: 70%;
   background-repeat: no-repeat;
   background-position: center 10%;
-  background-image: url('/img/online-shopping.svg');
+  background-image: url('/img/green-boxes.webp');
 }
 
 .welcome__image-background::before {
@@ -17,20 +17,18 @@
   height: 100vh;
   content: '';
   position: absolute;
-  opacity: 0.6;
-  background-image: url('/img/web-shopping.svg');
-  background-position: center 80%;
+  opacity: 0.8;
+  background-image: url('/img/pink-boxes.webp');
+  background-position: center 90%;
   background-repeat: no-repeat;
-  background-size: 60%;
+  background-size: 70%;
 }
 
 @media screen and (min-width: 1024px) {
   .welcome__image-background::after {
-    background-position: 10% 10%;
-    background-size: 20%;
+    background-image: none;
   }
   .welcome__image-background::before {
-    background-size: 20%;
-    background-position: 90% 90%;
+    background-image: none;
   }
 }

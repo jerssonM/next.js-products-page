@@ -102,6 +102,7 @@ export const AuthLoginForm = () => {
           <fieldset className="mb-6">
             <div className="flex items-center space-x-2">
               <Checkbox
+                id="terms"
                 disabled={isLoading}
                 {...checkboxRegister}
                 onCheckedChange={(value) =>
@@ -109,6 +110,7 @@ export const AuthLoginForm = () => {
                     target: { value, name: 'terms' },
                   })
                 }
+                className="data-[state=checked]:bg-orange-500 border-orange-500"
                 data-testid="auth-login-form__checkbox-terms"
               />
               <label htmlFor="terms">Accept terms and conditions</label>

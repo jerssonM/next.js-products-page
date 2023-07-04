@@ -1,4 +1,5 @@
 import Link from 'next/link'
+import Image from 'next/image'
 import { Login } from 'iconsax-react'
 
 import { cn } from '@/lib/utils'
@@ -10,15 +11,21 @@ import styles from './page.module.css'
 const HomePage = () => (
   <section
     className={cn(
-      'h-full bg-orange-200 flex justify-center items-center text-center',
+      'h-full flex justify-end items-center text-center relative',
       styles['welcome__image-background']
     )}
   >
-    <div className="z-10">
-      <Logo className="mb-8 animate-bounce" />
+    <Image
+      fill
+      alt="Shopping online"
+      src="/img/shopping-online.webp"
+      className="object-contain self-start hidden md:block"
+    />
+    <div className="w-full md:w-6/12 z-10">
+      <Logo className="mb-8 animate-bounce text-4xl" />
       <Link href={CONSTANTS.ROUTES.LOGIN}>
         <Button className="w-40">
-          <span className="mr-2">Login</span>
+          <span className="mr-2">Continue</span>
           <Login size={20} />
         </Button>
       </Link>
