@@ -1,6 +1,6 @@
 # [Shop Genius](https://next-js-products-page.vercel.app/)
 
-### Data provided by fake store api: [link](https://fakestoreapi.com/docs)
+### <a href="https://fakestoreapi.com/docs" target="_blank">Data provided by fake store api</a>
 
 ## Building with:
 

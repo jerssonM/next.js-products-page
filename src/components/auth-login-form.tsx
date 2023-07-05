@@ -12,7 +12,15 @@ import { CONSTANTS } from '@/constants'
 import { useFetch } from '@/hooks/useFetch'
 import { Credentials } from '@/services/fake-store/types'
 
-import { Input, Button, Label, Checkbox, Loader, Logo } from './ui'
+import {
+  Logo,
+  Input,
+  Label,
+  Button,
+  Loader,
+  Checkbox,
+  InputPassword,
+} from './ui'
 
 const formSchema = z.object({
   username: z.string().nonempty('Username is required'),
@@ -86,10 +94,8 @@ export const AuthLoginForm = () => {
           </fieldset>
           <fieldset className="mb-4">
             <Label htmlFor="password">Password</Label>
-            <Input
+            <InputPassword
               {...register('password')}
-              autoComplete="current-password"
-              type="password"
               disabled={isLoading}
               data-testid="auth-login-form__input-password"
             />

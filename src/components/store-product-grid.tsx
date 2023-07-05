@@ -26,7 +26,7 @@ export const StoreProductGrid = ({ products }: StoreProductGridProps) => {
   }
 
   return (
-    <div className="grid gap-4 grid-cols-1 md:grid-cols-3 p-4">
+    <div className="grid gap-4 grid-cols-1 md:grid-cols-3 xl:grid-cols-4 p-4">
       {products.map((product) => (
         <ProductCard
           product={product}
